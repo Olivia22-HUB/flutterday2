@@ -1,13 +1,11 @@
-//import 'package:flutter/foundation.dart';
 import 'package:declicpay/acceuil.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:declicpay/wallet.dart';
+import 'package:declicpay/git.dart';
+import 'package:declicpay/profile.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: DeclicPay(),
-  ));
+  runApp(DeclicPay());
 }
 
 class DeclicPay extends StatefulWidget {
@@ -20,28 +18,33 @@ class DeclicPay extends StatefulWidget {
 }
 
 class _DeclicPayState extends State {
+  final pages = [AcceuilPage(), WalletPage(), GiftPage(), ProfilePage()];
+
+  int indexInitialPage = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        leading: CircleAvatar(
-          backgroundImage: AssetImage("assets/images/image4.jpg"),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: pages[indexInitialPage],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: indexInitialPage,
+          onTap: (value) {
+            setState(() {
+              indexInitialPage = value;
+            });
+          },
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.grey,
+          iconSize: 30,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+            BottomNavigationBarItem(icon: Icon(Icons.wallet),label: "",),
+            BottomNavigationBarItem(icon: Icon(Icons.card_giftcard), label: ""),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+          ],
         ),
-        title: Text("Hello Olivia!"),
-        actions: [Icon(Icons.search)],
-        backgroundColor: Colors.blueAccent,
       ),
-
-      body: AcceuilPage(),
-
-      
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home)),
-        BottomNavigationBarItem(icon: Icon(Icons.wallet)),
-        BottomNavigationBarItem(icon: Icon(Icons.card_giftcard)),
-        BottomNavigationBarItem(icon: Icon(Icons.person))
-      ]),
-    ));
+    );
   }
 }
