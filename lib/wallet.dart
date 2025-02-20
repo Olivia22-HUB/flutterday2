@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:u_credit_card/u_credit_card.dart';
-//import 'package:fl_chart/fl_chart.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class WalletPage extends StatefulWidget {
   const WalletPage({super.key});
@@ -52,6 +52,27 @@ class _WalletPageState extends State {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               )
             ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          DefaultTabController(
+            length: 4,
+            child: Container(
+                child: TabBar(tabs: [
+              Tab(
+                text: "Day",
+              ),
+              Tab(
+                text: "Week",
+              ),
+              Tab(
+                text: "Month",
+              ),
+              Tab(
+                text: "Custom range",
+              )
+            ])),
           )
         ],
       ),

@@ -120,7 +120,157 @@ class _AcceuilPageState extends State {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 193, 197, 201),
                       foregroundColor: Colors.black),
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return SizedBox(
+                            height: 800,
+                            child: Container(
+                              padding: EdgeInsets.fromLTRB(25, 25, 20, 0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Send Money",
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 25),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Select card",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            color: const Color.fromARGB(
+                                                255, 236, 234, 234),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(7))),
+                                        child: TextButton(
+                                            onPressed: () {},
+                                            child: Text(
+                                              "Physical elb card",
+                                              style: TextStyle(fontSize: 10),
+                                            )),
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            color: const Color.fromARGB(
+                                                255, 236, 234, 234),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(7))),
+                                        child: TextButton(
+                                            onPressed: () {},
+                                            child: Text(
+                                              "Virtual ebl card",
+                                              style: TextStyle(fontSize: 10),
+                                            )),
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            color: const Color.fromARGB(
+                                                255, 236, 234, 234),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(7))),
+                                        child: TextButton(
+                                            onPressed: () {},
+                                            child: Text(
+                                              "Ebl card ",
+                                              style: TextStyle(fontSize: 10),
+                                            )),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("Choose recipient",
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                          ))
+                                    ],
+                                  ),
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                        filled: true,
+                                        hintText:
+                                            "Tape name/email/card/phone number",
+                                        hintStyle: TextStyle(fontSize: 12),
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(5))),
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                            "assets/images/image5.png"),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                            "assets/images/image5.png"),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                            "assets/images/image5.png"),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                            "assets/images/image5.png"),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                            "assets/images/image5.png"),
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                            "assets/images/image5.png"),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Amount",
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        });
+                  },
                   child: Row(
                     children: [
                       Image.asset("assets/images/money-send.png"),
